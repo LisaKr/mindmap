@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f0e8">
+    <meta name="description" content="A personal field guide to places worth finding in Tokyo and beyond.">
+    <title>Japan Field Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,650&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Japan Field Notes home">
+        <span class="brand-mark">日</span>
+        <span>Japan Field Notes</span>
+      </a>
+      <a class="source-link" href="./japan.md">
+        <i data-lucide="notebook-tabs"></i>
+        Source notes
+      </a>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="kicker">A personal directory · Tokyo and beyond</p>
+        <h1 id="page-title">Places worth finding in Japan.</h1>
+        <p>Listening rooms, tiny kitchens, old gardens, record shops and the occasional excellent bath.</p>
+      </div>
+    </section>
+
+    <main class="explorer">
+      <section class="explorer-toolbar" aria-label="Find places">
+        <label class="search-box">
+          <i data-lucide="search"></i>
+          <span class="sr-only">Search places</span>
+          <input id="search" type="search" placeholder="Search ramen, vinyl, Shibuya…" autocomplete="off">
+        </label>
+        <div class="view-switch" aria-label="Group places by">
+          <button type="button" data-group-by="category" aria-pressed="true">Category</button>
+          <button type="button" data-group-by="area" aria-pressed="false">Area</button>
+        </div>
+        <p id="result-count" class="result-count" aria-live="polite"></p>
+      </section>
+
+      <div class="explorer-layout">
+        <aside class="filters-panel" aria-label="Place filters">
+          <section>
+            <p class="filter-title">What</p>
+            <div id="category-filters" class="filter-list"></div>
+          </section>
+          <section>
+            <p class="filter-title">Where</p>
+            <div id="area-filters" class="filter-list"></div>
+          </section>
+        </aside>
+        <div id="places" class="places" aria-live="polite"></div>
+      </div>
+    </main>
+
+    <template id="empty-state">
+      <section class="empty-state">
+        <span>見つかりません</span>
+        <h2>No places found</h2>
+        <p>Try a different place, neighborhood, or category.</p>
+      </section>
+    </template>
+
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
